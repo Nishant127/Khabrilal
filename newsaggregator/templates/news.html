@@ -35,18 +35,17 @@
           <button type="button" class="btn btn-outline-success mx-2" >Login</button>
         </form>
       </nav>
-        <div class="container my-5">
-        <div class="left">
-            <div class="list-group">
-                <a href="{% url 'business' %}" class="list-group-item list-group-item-action">Business</a>
-                <a href="{% url 'health' %}" class="list-group-item list-group-item-action">Health</a>
-                <a href="{% url 'science' %}" class="list-group-item list-group-item-action">Science</a>
-                <a href="{% url 'technology' %}" class="list-group-item list-group-item-action">Technology</a>
-                <a href="{% url 'general' %}" class="list-group-item list-group-item-action">General</a>
-                <a href="{% url 'entertainment' %}" class="list-group-item list-group-item-action">Entertainment</a>
-                <a href="{% url 'sports' %}" class="list-group-item list-group-item-action">Sports</a>
-              </div>
-          </div>
+      <div class="jumbotron">
+          {% for n,d,i in mylist %}
+          <div class="jumbotron">
+            <img src="{{i}}" ,alt=" ", height="150px",width="150px">
+            <h3>NEWS:</h3>> {{n}}
+            {{value | linebreaks}}
+            <h3>DESCRIPTION:</h3> {{d}}
+            {{value | linebreaks}}
+            </div>
+            
+          {% endfor %}
       </div>
     <!-- Optional JavaScript; choose one of the two! -->
 
