@@ -37,6 +37,7 @@ def health(request):
     desc = []
     news = []
     img = []
+    url= []
     
     for i in range(len(articles)):
         myarticles = articles[i]
@@ -44,9 +45,10 @@ def health(request):
         news.append(myarticles['title'])
         desc.append(myarticles['description'])
         img.append(myarticles['urlToImage'])
+        url.append(myarticles['url'])
         
 
-    mylist = zip(news, desc, img)
+    mylist = zip(news, desc, img, url)
 
     return render(request, 'news.html', context = {"mylist": mylist})
 
@@ -55,10 +57,11 @@ def health(request):
 def science(request):
     newsapi = NewsApiClient(api_key = "3020db5daf77473dad1742f6293a3429")   
     sciencenews = newsapi.get_top_headlines(category="science",country="in") 
-    
+    articles = sciencenews['articles']
     desc = []
     news = []
     img = []
+    url= []
 
     for i in range(len(articles)):
         myarticles = articles[i]
@@ -66,9 +69,10 @@ def science(request):
         news.append(myarticles['title'])
         desc.append(myarticles['description'])
         img.append(myarticles['urlToImage'])
+        url.append(myarticles['url'])
         
 
-    mylist = zip(news, desc, img)
+    mylist = zip(news, desc, img, url)
 
     return render(request, 'news.html', context = {"mylist": mylist})
 
@@ -80,6 +84,7 @@ def technology(request):
     desc = []
     news = []
     img = []
+    url= []
 
     for i in range(len(articles)):
         myarticles = articles[i]
@@ -87,9 +92,10 @@ def technology(request):
         news.append(myarticles['title'])
         desc.append(myarticles['description'])
         img.append(myarticles['urlToImage'])
+        url.append(myarticles['url'])
         
 
-    mylist = zip(news, desc, img)
+    mylist = zip(news, desc, img, url)
 
     return render(request, 'news.html', context = {"mylist": mylist})
 
@@ -100,6 +106,7 @@ def general(request):
     desc = []
     news = []
     img = []
+    url= []
 
     for i in range(len(articles)):
         myarticles = articles[i]
@@ -107,9 +114,10 @@ def general(request):
         news.append(myarticles['title'])
         desc.append(myarticles['description'])
         img.append(myarticles['urlToImage'])
+        url.append(myarticles['url'])
         
 
-    mylist = zip(news, desc, img)
+    mylist = zip(news, desc, img, url)
 
     return render(request, 'news.html', context = {"mylist": mylist})
 
@@ -120,6 +128,7 @@ def entertainment(request):
     desc = []
     news = []
     img = []
+    url= []
 
     for i in range(len(articles)):
         myarticles = articles[i]
@@ -127,9 +136,10 @@ def entertainment(request):
         news.append(myarticles['title'])
         desc.append(myarticles['description'])
         img.append(myarticles['urlToImage'])
+        url.append(myarticles['url'])
         
 
-    mylist = zip(news, desc, img)
+    mylist = zip(news, desc, img, url)
 
     return render(request, 'news.html', context = {"mylist": mylist})
 
@@ -140,6 +150,7 @@ def sports(request):
     desc = []
     news = []
     img = []
+    url= []
 
     for i in range(len(articles)):
         myarticles = articles[i]
@@ -147,8 +158,9 @@ def sports(request):
         news.append(myarticles['title'])
         desc.append(myarticles['description'])
         img.append(myarticles['urlToImage'])
+        url.append(myarticles['url'])
         
 
-    mylist = zip(news, desc, img)
+    mylist = zip(news, desc, img, url)
 
     return render(request, 'news.html', context = {"mylist": mylist})
