@@ -23,7 +23,8 @@
             width: 300px;
 
             padding: 10px;
-            }  
+            }
+              
     </style>
   </head>
   <body>
@@ -36,17 +37,20 @@
         </form>
       </nav>
       <div class="jumbotron">
-          {% for n,d,i in mylist %}
+          {% for n,d,i,u in mylist %}
           <div class="jumbotron">
-            <img src="{{i}}" ,alt=" ", height="150px",width="150px">
-            <h3>NEWS:</h3>> {{n}}
+            <span class="border border-primary"></span>
+            <img src="{{i}}" ,alt=" ", height="200px",width="300px">
+            <h3>NEWS:</h3>> {{n}} 
             {{value | linebreaks}}
             <h3>DESCRIPTION:</h3> {{d}}
             {{value | linebreaks}}
+            <h3>URL:</h3> <a href={{u}}>LINK</a>
             </div>
-            
+            </span>
           {% endfor %}
       </div>
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->

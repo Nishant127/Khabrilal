@@ -10,9 +10,11 @@ def business(request):
     newsapi = NewsApiClient(api_key = "3020db5daf77473dad1742f6293a3429")   
     businessnews = newsapi.get_top_headlines(category="business",country="in") 
     articles = businessnews['articles']
+    print(articles)
     desc = []
     news = []
     img = []
+    url= []
     
     for i in range(len(articles)):
         myarticles = articles[i]
@@ -20,9 +22,11 @@ def business(request):
         news.append(myarticles['title'])
         desc.append(myarticles['description'])
         img.append(myarticles['urlToImage'])
+        url.append(myarticles['url'])
+
         
 
-    mylist = zip(news, desc, img)
+    mylist = zip(news, desc, img, url)
 
     return render(request, 'news.html', context = {"mylist": mylist})
 
@@ -51,7 +55,7 @@ def health(request):
 def science(request):
     newsapi = NewsApiClient(api_key = "3020db5daf77473dad1742f6293a3429")   
     sciencenews = newsapi.get_top_headlines(category="science",country="in") 
-    articles = sciencenews['articles']
+    
     desc = []
     news = []
     img = []
