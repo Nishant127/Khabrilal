@@ -10,12 +10,13 @@ def business(request):
     newsapi = NewsApiClient(api_key = "3020db5daf77473dad1742f6293a3429")   
     businessnews = newsapi.get_top_headlines(category="business",country="in") 
     articles = businessnews['articles']
-    print(articles)
     desc = []
     news = []
     img = []
     url= []
-    
+    auth = []
+    date = []
+
     for i in range(len(articles)):
         myarticles = articles[i]
 
@@ -23,10 +24,10 @@ def business(request):
         desc.append(myarticles['description'])
         img.append(myarticles['urlToImage'])
         url.append(myarticles['url'])
+        auth.append(myarticles['author'])
+        date.append(myarticles['publishedAt'])
 
-        
-
-    mylist = zip(news, desc, img, url)
+    mylist = zip(news, desc, img, url, auth, date)
 
     return render(request, 'news.html', context = {"mylist": mylist})
 
@@ -38,7 +39,9 @@ def health(request):
     news = []
     img = []
     url= []
-    
+    auth = []
+    date = []
+
     for i in range(len(articles)):
         myarticles = articles[i]
 
@@ -46,9 +49,10 @@ def health(request):
         desc.append(myarticles['description'])
         img.append(myarticles['urlToImage'])
         url.append(myarticles['url'])
-        
+        auth.append(myarticles['author'])
+        date.append(myarticles['publishedAt'])
 
-    mylist = zip(news, desc, img, url)
+    mylist = zip(news, desc, img, url, auth, date)
 
     return render(request, 'news.html', context = {"mylist": mylist})
 
@@ -62,6 +66,8 @@ def science(request):
     news = []
     img = []
     url= []
+    auth = []
+    date = []
 
     for i in range(len(articles)):
         myarticles = articles[i]
@@ -70,21 +76,24 @@ def science(request):
         desc.append(myarticles['description'])
         img.append(myarticles['urlToImage'])
         url.append(myarticles['url'])
-        
+        auth.append(myarticles['author'])
+        date.append(myarticles['publishedAt'])
 
-    mylist = zip(news, desc, img, url)
+    mylist = zip(news, desc, img, url, auth, date)
 
     return render(request, 'news.html', context = {"mylist": mylist})
 
 
 def technology(request):
     newsapi = NewsApiClient(api_key = "3020db5daf77473dad1742f6293a3429")   
-    technews = newsapi.get_top_headlines(category="technology",country="in") 
-    articles = technews['articles']
+    technologynews = newsapi.get_top_headlines(category="technology",country="in") 
+    articles = technologynews['articles']
     desc = []
     news = []
     img = []
     url= []
+    auth = []
+    date = []
 
     for i in range(len(articles)):
         myarticles = articles[i]
@@ -93,9 +102,10 @@ def technology(request):
         desc.append(myarticles['description'])
         img.append(myarticles['urlToImage'])
         url.append(myarticles['url'])
-        
+        auth.append(myarticles['author'])
+        date.append(myarticles['publishedAt'])
 
-    mylist = zip(news, desc, img, url)
+    mylist = zip(news, desc, img, url, auth, date)
 
     return render(request, 'news.html', context = {"mylist": mylist})
 
@@ -107,6 +117,8 @@ def general(request):
     news = []
     img = []
     url= []
+    auth = []
+    date = []
 
     for i in range(len(articles)):
         myarticles = articles[i]
@@ -115,9 +127,10 @@ def general(request):
         desc.append(myarticles['description'])
         img.append(myarticles['urlToImage'])
         url.append(myarticles['url'])
-        
+        auth.append(myarticles['author'])
+        date.append(myarticles['publishedAt'])
 
-    mylist = zip(news, desc, img, url)
+    mylist = zip(news, desc, img, url, auth, date)
 
     return render(request, 'news.html', context = {"mylist": mylist})
 
@@ -129,6 +142,8 @@ def entertainment(request):
     news = []
     img = []
     url= []
+    auth = []
+    date = []
 
     for i in range(len(articles)):
         myarticles = articles[i]
@@ -137,9 +152,10 @@ def entertainment(request):
         desc.append(myarticles['description'])
         img.append(myarticles['urlToImage'])
         url.append(myarticles['url'])
-        
+        auth.append(myarticles['author'])
+        date.append(myarticles['publishedAt'])
 
-    mylist = zip(news, desc, img, url)
+    mylist = zip(news, desc, img, url, auth, date)
 
     return render(request, 'news.html', context = {"mylist": mylist})
 
@@ -151,6 +167,8 @@ def sports(request):
     news = []
     img = []
     url= []
+    auth = []
+    date = []
 
     for i in range(len(articles)):
         myarticles = articles[i]
@@ -159,8 +177,10 @@ def sports(request):
         desc.append(myarticles['description'])
         img.append(myarticles['urlToImage'])
         url.append(myarticles['url'])
-        
+        auth.append(myarticles['author'])
+        date.append(myarticles['publishedAt'])
 
-    mylist = zip(news, desc, img, url)
+    mylist = zip(news, desc, img, url, auth, date)
 
     return render(request, 'news.html', context = {"mylist": mylist})
+    
