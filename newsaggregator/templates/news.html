@@ -13,7 +13,7 @@
     <style>
 
         body {
-          background-color : #ced12b;
+          background-image: url('{% static "Background.png" %}');
           margin : 0 ;
           padding : 0 ;
           transition: all .3s;
@@ -26,7 +26,7 @@
           margin: 1rem auto;
           box-shadow: 0 3px 7px -1px rgba(0, 0, 0, .1);
           margin-bottom: 1.6%;
-          background: #d9dddc;
+          background-image: url('{% static "Background.png" %}');
           line-height: 1.4;
           font-family: sans-serif;
           border-radius: 5px;
@@ -206,6 +206,10 @@
           .responsive {
             width: 100%;
             height: auto;
+          }
+
+          .jumbotron {
+            background-image: url('{% static "Background.png" %}');
           }
         
     </style>
